@@ -1,27 +1,20 @@
 
 import React from 'react';
-import {
-} from 'react-native';
-
-import { Provider } from "react-redux";
-import { store, persistor } from './redux/store'
+import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/lib/integration/react';
-import Router from "./routes";
-
-
-
+import { store, persistor } from './redux/store';
+import Router from './routes';
 
 const Index = () => {
-
-    return (
-        <>
-        <Provider store={store}>
+  return (
+    <>
+      <Provider store={store}>
         <PersistGate persistor={persistor} loading={null}>
-        <Router/>
+          <Router />
         </PersistGate>
       </Provider>
     </>
-    )
- }
+  );
+};
 
- export default Index;
+export default Index;
