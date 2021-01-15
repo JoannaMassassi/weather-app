@@ -24,7 +24,7 @@ export function fetchWeathers() {
       )
         .then((res) => res.json())
         .then((data) => {
-          dispatch(receivedWeathers(data.list));
+          return dispatch(receivedWeathers(data.list));
         })
         .catch((e) => {
           Alert.alert('There was a problem with this service');
