@@ -22,7 +22,7 @@ Y ahora puedes usar la app!! :)
 
 ## Qué podría salir mal?? 🛠️
     Si mientras compilas llegas a experimentar un error como el siguiente
-<img src="/app/images/error-android.jpeg">
+<img src="/weatherApp/app/images/error-android.jpeg">
 
 o algo relacionado al gradlew, tendrás que:
 ```
