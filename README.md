@@ -31,7 +31,7 @@ o algo relacionado al gradlew, tendrás que:
 * Guarda tus cambios y vuelve a compilar!
 ```
 
-## Esto es lo que verás en la app
+## Esto es lo que verás en la app (Link a Youtube)
 [![Watch the video](https://img.youtube.com/vi/nSCCCf4T2Fk/maxresdefault.jpg)](https://youtu.be/nSCCCf4T2Fk)
 
 
