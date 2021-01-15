@@ -32,7 +32,7 @@ o algo relacionado al gradlew, tendrás que:
 ```
 
 ## Esto es lo que verás en la app
-[![""](https://im2.ezgif.com/tmp/ezgif-2-96ee9094b98d.gif]
+https://im2.ezgif.com/tmp/ezgif-2-96ee9094b98d.gif
 
 
 ---
