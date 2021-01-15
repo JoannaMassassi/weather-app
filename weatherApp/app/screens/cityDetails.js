@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Text, View, Image, FlatList, Alert, ActivityIndicator } from 'react-native';
 import moment from 'moment';
 import API_KEY from '../lib/key';
-import WeatherPreview from '../components/weatherPreview';
+import WeatherPreview from '../components/weatherPreview/weatherPreview';
 
 function DetailsScreen({navigation, route}) {
   

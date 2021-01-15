@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Text, View, ActivityIndicator, FlatList, Alert } from 'react-native';
 import { fetchWeathers, receivedWeathers } from '../redux/appStore/actions';
 import { useSelector, useDispatch } from 'react-redux';
-import WeatherPreview from '../components/weatherPreview';
+import WeatherPreview from '../components/weatherPreview/weatherPreview';
 
 function WeatherScreen({navigation}) {
   const dispatch = useDispatch();
