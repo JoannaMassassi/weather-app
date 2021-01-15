@@ -10,8 +10,8 @@ const {width} = Dimensions.get("window")
 
 function NavTitle(props) {
   return (
-    <View style={{flexDirection: 'row', alignItems: 'center', width, paddingHorizontal:10}}>
-      <Text style={{color: '#0C2340', fontWeight: 'bold', fontSize: 18, flex: 1}}>
+    <View style={{flexDirection: 'row', alignItems: 'center', width:'100%', paddingHorizontal:10,flex:1, justifyContent:'space-between'}}>
+      <Text style={{color: '#0C2340', fontWeight: 'bold', fontSize: 18}}>
         {props.title}
       </Text>
       <Image
