@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Text, View, Image, FlatList, Alert } from 'react-native';
+import { Text, View, Image, FlatList, Alert, ActivityIndicator } from 'react-native';
 import moment from 'moment';
 import API_KEY from '../lib/key';
 
@@ -12,6 +12,7 @@ function DetailsScreen({navigation, route}) {
   let actualTempMax = parseInt(item?.main?.temp_max) + '°';
   let actualTempMin = parseInt(item?.main?.temp_min) + '°';
   let [nextDaysWeather, setWeather] = useState([]);
+  let [isFetching, setFetching] = useState(false)
 
   useEffect(() => {
     _fetchDetailedWeather();
@@ -22,10 +23,8 @@ function DetailsScreen({navigation, route}) {
     let nextDaysminTemp = parseInt(item?.temp?.min) + '°';
     let codeIcon = item?.weather?.[0]?.icon;
     let urlIcon = {uri: `http://openweathermap.org/img/w/${codeIcon}.png`};
-    let timestamp = item?.dt
-    let dateConverted = moment.unix(timestamp).format('MMM DD')
-    
-
+    let timestamp = item?.dt;
+    let dateConverted = moment.unix(timestamp).format('MMM DD');
 
     return (
       <>
@@ -38,7 +37,9 @@ function DetailsScreen({navigation, route}) {
             justifyContent: 'space-between',
             alignItems: 'center',
           }}>
-          <Text style={{fontSize:16, color:'white', fontWeight:'bold'}}>{dateConverted}</Text>
+          <Text style={{fontSize: 16, color: 'white', fontWeight: 'bold'}}>
+            {dateConverted}
+          </Text>
           <Image source={urlIcon} style={{width: 40, height: 40}} />
           <Text style={{color: '#0C2340', fontWeight: 'bold'}}>
             {' '}
@@ -58,6 +59,7 @@ function DetailsScreen({navigation, route}) {
     );
   };
   const _fetchDetailedWeather = async () => {
+    setFetching(true)
     try {
       await fetch(
         `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=current,minutely,hourly&appid=${API_KEY}&units=metric`,
@@ -66,24 +68,28 @@ function DetailsScreen({navigation, route}) {
         .then((data) => {
           if (data) {
             setWeather(data?.daily);
+            setFetching(false)
           }
+          
         })
         .catch((e) => {
+          setFetching(false)
           Alert.alert('There was a problem with this service');
         });
     } catch (e) {
+      setFetching(false)
       Alert.alert('There was a problem with this service');
     }
   };
   return (
-    <View style={{flex: 1, backgroundColor:'#B9D9EB'}}>
+    <View style={{flex: 1, backgroundColor: '#B9D9EB'}}>
       <Text
         style={{
           marginTop: 20,
           alignSelf: 'center',
           fontWeight: 'bold',
           fontSize: 25,
-          color:'#0C2340',
+          color: '#0C2340',
         }}>
         {cityName}
       </Text>
@@ -106,7 +112,8 @@ function DetailsScreen({navigation, route}) {
         {actualTempMax + ' / ' + actualTempMin}
       </Text>
       <View style={{width: '100%', flex: 1}}>
-        {nextDaysWeather.length > 0 ? (
+        {isFetching ?<View style={{marginTop:35}}><ActivityIndicator color="black" size={'large'} color={'#6082B6'} /></View>  : null}
+        {nextDaysWeather.length > 0  ? (
           <FlatList
             style={{flex: 1, marginTop: 10}}
             contentContainerStyle={{paddingBottom: 40, paddingTop: 15}}

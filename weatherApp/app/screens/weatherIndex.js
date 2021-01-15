@@ -1,7 +1,7 @@
-import React, {useState, useEffect} from 'react';
-import {Text, View, ActivityIndicator, FlatList, Alert} from 'react-native';
-import {fetchWeathers, receivedWeathers} from '../redux/appStore/actions';
-import {useSelector, useDispatch} from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { Text, View, ActivityIndicator, FlatList, Alert } from 'react-native';
+import { fetchWeathers, receivedWeathers } from '../redux/appStore/actions';
+import { useSelector, useDispatch } from 'react-redux';
 import WeatherPreview from '../components/weatherPreview';
 
 function WeatherScreen({navigation}) {
