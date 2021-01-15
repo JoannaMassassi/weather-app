@@ -2,9 +2,10 @@
 import 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
-import App from '../App';
+import Index from '../app/index';
+import fetch from 'isomorphic-fetch';
 
 
 it('renders correctly', () => {
-  renderer.create(<App />);
+  renderer.create(<Index />);
 });
