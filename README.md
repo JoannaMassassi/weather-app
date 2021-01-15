@@ -9,9 +9,11 @@ Esta aplicación está desarrollada con React Native y consume datos de https://
 ```
 * Hacer click en el botón 'code' del repositorio y copiar el link.
 * Clonar el repositorio en una carpeta de tu computadora desde terminal.
-* Abrir el directorio del proyecto y hacer npm install, en caso de compilar en MAC/ios, entrar a la carpeta 'ios' y hacer pod install también.
+* Abrir el directorio del proyecto y hacer npm install, en caso de compilar en MAC/ios,
+  entrar a la carpeta 'ios' y hacer pod install también.
 * Conectar tu dispositivo o bien un emulador.
-* En la terminal ejecutar react-native run-android o react-native run-ios respectivamente. (Tambien puedes compilar directamente desde Xcode o Android Studio).
+* En la terminal ejecutar react-native run-android o react-native run-ios respectivamente. 
+  (Tambien puedes compilar directamente desde Xcode o Android Studio).
 
 
 Y ahora puedes usar la app!! :)
