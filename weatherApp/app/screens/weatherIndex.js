@@ -20,7 +20,7 @@ function WeatherScreen({navigation}) {
         setFetching(false);
       })
       .catch((e) => {
-        Alert.alert('There seems to be an error with this service')
+        Alert.alert('There seems to be an error')
       });
   };
 

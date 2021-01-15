@@ -1,1 +1,2 @@
-export const INITIALIZE = "INITIALIZE"
+export const INITIALIZE = 'INITIALIZE';
+export const RECEIVED_WEATHERS = 'RECEIVED_WEATHERS';

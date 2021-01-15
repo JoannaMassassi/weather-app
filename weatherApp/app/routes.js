@@ -10,7 +10,7 @@ const AppStack = createStackNavigator();
 function NavTitle(props) {
   return (
     <View style={{flexDirection: 'row', alignItems: 'center'}}>
-      <Text style={{color: 'white', fontWeight: 'bold', fontSize: 18, flex: 1}}>
+      <Text style={{color: '#0C2340', fontWeight: 'bold', fontSize: 18, flex: 1}}>
         {props?.title}
       </Text>
       <Image
@@ -27,7 +27,7 @@ function App() {
       <AppStack.Navigator
         screenOptions={{
           headerStyle: {
-            backgroundColor: '#87CEEB',
+            backgroundColor: 'white',
           },
         }}
         initialRouteName="Weathers">

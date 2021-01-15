@@ -23,7 +23,7 @@ export default function WeatherPreview(props) {
           source={iconUrl}
           style={{width: width / 8, height: height / 20}}
         />
-        <Text style={{color: '#6082B6', fontSize: 20}}>{actualTemp}</Text>
+        <Text style={{color:'#0C2340', fontSize: 20}}>{actualTemp}</Text>
       </View>
     );
   };
@@ -33,7 +33,7 @@ export default function WeatherPreview(props) {
       <View
         style={{
           width: '100%',
-          backgroundColor: 'white',
+          backgroundColor: '#87CEEB',
           borderRadius: 7,
           flexDirection: 'column',
           justifyContent:'center',

@@ -17,11 +17,12 @@ export default StyleSheet.create({
  },
  
  textStyle: {
-    color:'#0C2340',
+    color:'white',
     fontSize: 20,
     flexWrap: 'wrap',
     flex: 2,
     padding: 5,
+    fontWeight:'bold'
  }
 });
 
