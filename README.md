@@ -30,4 +30,9 @@ o algo relacionado al gradlew, tendrás que:
 * Abrir el archivo 'gradle-wrapper.properties' y sustituir la distributionUrl por:  https\://services.gradle.org/distributions/gradle-6.3-all.zip
 * Guarda tus cambios y vuelve a compilar!
 ```
+
+## Esto es lo que verás en la app
+[![""](https://im2.ezgif.com/tmp/ezgif-2-96ee9094b98d.gif](https://im2.ezgif.com/tmp/ezgif-2-96ee9094b98d.gif)
+
+
 ---
