@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Text, View, Image, FlatList, Alert } from 'react-native';
 import moment from 'moment';
+import API_KEY from '../lib/key';
+
 function DetailsScreen({navigation, route}) {
   let item = route?.params?.city;
   let cityName = item?.name ?? '';
@@ -58,7 +60,7 @@ function DetailsScreen({navigation, route}) {
   const _fetchDetailedWeather = async () => {
     try {
       await fetch(
-        `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=current,minutely,hourly&appid=4a461c2eb553056d2e88af52364a2d0d&units=metric`,
+        `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=current,minutely,hourly&appid=${API_KEY}&units=metric`,
       )
         .then((res) => res.json())
         .then((data) => {
