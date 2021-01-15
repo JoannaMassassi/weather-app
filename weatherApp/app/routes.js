@@ -1,12 +1,11 @@
 import * as React from 'react';
-import { View, Image, Text, Dimensions } from 'react-native';
+import { View, Image, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import Weather from './screens/weatherIndex';
-import CityDetails from './screens/cityDetails';
+import Weather from './screens/Index/weatherIndex';
+import CityDetails from './screens/Details/cityDetails';
 
 const AppStack = createStackNavigator();
-const {width} = Dimensions.get("window")
 
 function NavTitle(props) {
   return (
