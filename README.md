@@ -32,7 +32,8 @@ o algo relacionado al gradlew, tendrás que:
 ```
 
 ## Esto es lo que verás en la app
-https://im2.ezgif.com/tmp/ezgif-2-96ee9094b98d.gif
+[![Watch the video](https://img.youtube.com/vi/nSCCCf4T2Fk/maxresdefault.jpg)](https://youtu.be/nSCCCf4T2Fk)
+
 
 
 ---
