@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Text, View, Image, FlatList, Alert, ActivityIndicator } from 'react-native';
 import moment from 'moment';
 import API_KEY from '../lib/key';
+import WeatherPreview from '../components/weatherPreview';
 
 function DetailsScreen({navigation, route}) {
+  
   let item = route?.params?.city;
   let cityName = item?.name ?? '';
   let lat = item?.coord?.Lat;
@@ -13,12 +15,15 @@ function DetailsScreen({navigation, route}) {
   let actualTempMin = parseInt(item?.main?.temp_min) + '°';
   let [nextDaysWeather, setWeather] = useState([]);
   let [isFetching, setFetching] = useState(false)
+  let feelLike =  parseInt(item?.main?.feels_like) + '°'
+  let humidity = item?.main?.humidity +'%'
 
   useEffect(() => {
     _fetchDetailedWeather();
   }, []);
 
   const _renderItem = (item) => {
+    
     let nextDaysmaxTemp = parseInt(item?.temp?.max) + '°';
     let nextDaysminTemp = parseInt(item?.temp?.min) + '°';
     let codeIcon = item?.weather?.[0]?.icon;
@@ -32,7 +37,6 @@ function DetailsScreen({navigation, route}) {
           style={{
             width: '100%',
             flexDirection: 'row',
-            paddingHorizontal: 15,
             paddingVertical: 5,
             justifyContent: 'space-between',
             alignItems: 'center',
@@ -50,7 +54,7 @@ function DetailsScreen({navigation, route}) {
         <View
           style={{
             borderWidth: 0.5,
-            width: '90%',
+            width: '100%',
             alignSelf: 'center',
             borderColor: '#4B9CD3',
           }}
@@ -82,7 +86,7 @@ function DetailsScreen({navigation, route}) {
     }
   };
   return (
-    <View style={{flex: 1, backgroundColor: '#B9D9EB'}}>
+    <View style={{flex: 1, backgroundColor: '#B9D9EB', paddingHorizontal: 15}}>
       <Text
         style={{
           marginTop: 20,
@@ -109,13 +113,19 @@ function DetailsScreen({navigation, route}) {
           color: '#6082B6',
           alignSelf: 'center',
         }}>
-        {actualTempMax + ' / ' + actualTempMin}
+        {actualTempMax+' / '+actualTempMin}
       </Text>
       <View style={{width: '100%', flex: 1}}>
+
+        <View style={{ height:'20%', justifyContent:'space-between', flexDirection:'row' }}>
+          <Text style={{alignSelf:'center', color:'#0C2340', fontWeight:'bold', fontSize:14}}>Feels like: <Text style={{color:'white', fontWeight:'bold', fontSize:14}}>{feelLike}</Text></Text>
+          <Text  style={{alignSelf:'center', color:'#0C2340', fontWeight:'bold', fontSize:14}}>Humidity: <Text style={{color:'white', fontWeight:'bold', fontSize:14}}>{humidity}</Text></Text>
+        </View>
         {isFetching ?<View style={{marginTop:35}}><ActivityIndicator color="black" size={'large'} color={'#6082B6'} /></View>  : null}
         {nextDaysWeather.length > 0  ? (
           <FlatList
-            style={{flex: 1, marginTop: 10}}
+          showsVerticalScrollIndicator={false}
+            style={{flex: 1}}
             contentContainerStyle={{paddingBottom: 40, paddingTop: 15}}
             keyExtractor={(item, index) => index.toString()}
             data={nextDaysWeather}

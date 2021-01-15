@@ -2,7 +2,11 @@ import { StyleSheet } from 'react-native'
 
 export default StyleSheet.create({
  buttonStyle:{
-    minHeight:60, marginTop:10,width:'95%', alignSelf:'center', backgroundColor: 'white',
+    minHeight:60, 
+    marginTop:10,
+    width:'95%', 
+    alignSelf:'center', 
+    backgroundColor: 'white',
     borderColor: '#A6A8BA53',
     flexDirection: 'row',
     shadowColor: '#D6D8EA',
